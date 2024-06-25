@@ -1,4 +1,4 @@
-package com.andreirookie.ticketsearch
+package com.andreirookie.activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

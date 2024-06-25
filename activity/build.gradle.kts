@@ -1,12 +1,10 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.jetbrainsKotlinKapt)
-    alias(libs.plugins.kotlinSerialization)
 }
 
 android {
-    namespace = "com.andreirookie.impl"
+    namespace = "com.andreirookie.activity"
     compileSdk = 34
 
     defaultConfig {
@@ -42,16 +40,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    api(project(":core:api"))
-
-    implementation(libs.dagger)
-    kapt(libs.dagger.compiler)
-
-    implementation(libs.retrofit)
-    implementation(libs.okhttp)
-    implementation(libs.kotlinSerialization)
-    implementation(libs.kotlinxSerializationJson)
-    implementation(libs.retrofitSerializationConverter)
-
 }

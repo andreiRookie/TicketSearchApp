@@ -1,12 +1,10 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.jetbrainsKotlinKapt)
-    alias(libs.plugins.kotlinSerialization)
 }
 
 android {
-    namespace = "com.andreirookie.impl"
+    namespace = "com.andreirookie.bridge"
     compileSdk = 34
 
     defaultConfig {
@@ -26,15 +24,18 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
 }
 
 dependencies {
+
+    api(project(":core:api"))
+    implementation(project(":core:impl"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -42,16 +43,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    api(project(":core:api"))
-
-    implementation(libs.dagger)
-    kapt(libs.dagger.compiler)
-
-    implementation(libs.retrofit)
-    implementation(libs.okhttp)
-    implementation(libs.kotlinSerialization)
-    implementation(libs.kotlinxSerializationJson)
-    implementation(libs.retrofitSerializationConverter)
-
 }
