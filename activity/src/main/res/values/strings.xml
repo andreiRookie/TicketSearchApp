@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">TicketSearch</string>
+    <string name="air_tickets">Авиабилеты</string>
+    <string name="hotels">Отели</string>
+    <string name="shorter_way">Короче</string>
+    <string name="subscriptions">Подписки</string>
+    <string name="profile">Профиль</string>
 </resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/search_nav_graph"
+        android:icon="@drawable/ic_plane_24"
+        android:title="@string/air_tickets"/>
+
+    <item android:id="@+id/hotels"
+        android:icon="@drawable/ic_bed_24"
+        android:title="@string/hotels"/>
+
+    <item android:id="@+id/shorter_way"
+        android:icon="@drawable/ic_pin_24"
+        android:title="@string/shorter_way"/>
+
+    <item android:id="@+id/subscriptions"
+        android:icon="@drawable/ic_bell_24"
+        android:title="@string/subscriptions"/>
+
+    <item android:id="@+id/profile"
+        android:icon="@drawable/ic_profile_24"
+        android:title="@string/profile"/>
+</menu>
