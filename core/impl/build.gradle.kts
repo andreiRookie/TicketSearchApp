@@ -1,20 +1,18 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.jetbrainsKotlinKapt)
 }
 
 android {
-    namespace = "com.andreirookie.ticketsearch"
+    namespace = "com.andreirookie.impl"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.andreirookie.ticketsearch"
         minSdk = 29
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -40,9 +38,19 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    api(project(":core:api"))
+
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+
+    implementation(libs.retrofit)
+    implementation(libs.okhttp)
+    implementation(libs.kotlinSerialization)
+    implementation(libs.kotlinxSerializationJson)
+    implementation(libs.retrofitSerializationConverter)
+
 }
