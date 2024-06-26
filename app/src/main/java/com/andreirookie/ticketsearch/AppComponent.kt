@@ -2,7 +2,7 @@ package com.andreirookie.ticketsearch
 
 import android.app.Application
 import android.content.Context
-import com.andreirookie.api.AppContextProvider
+import com.andreirookie.impl.AppContextProvider
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton

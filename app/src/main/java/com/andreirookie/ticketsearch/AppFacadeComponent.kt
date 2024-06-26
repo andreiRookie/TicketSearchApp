@@ -1,9 +1,9 @@
 package com.andreirookie.ticketsearch
 
 import android.app.Application
-import com.andreirookie.api.AppContextProvider
-import com.andreirookie.api.NetworkProvider
-import com.andreirookie.api.ProvidersFacade
+import com.andreirookie.impl.AppContextProvider
+import com.andreirookie.impl.NetworkProvider
+import com.andreirookie.impl.ProvidersFacade
 import com.andreirookie.bridge.CoreProvidersFactory
 import dagger.Component
 

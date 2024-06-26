@@ -12,6 +12,7 @@
         <item name="itemTextAppearanceActiveBoldEnabled">false</item>
         <item name="labelVisibilityMode">labeled</item>
         <item name="android:outlineProvider">none</item>
+        <item name="android:background">@android:color/transparent</item>
         <item name="itemActiveIndicatorStyle">@android:color/transparent</item>
         <item name="itemRippleColor">@android:color/transparent</item>
         <item name="itemIconTint">@color/bottom_nav_item_color_selector</item>

@@ -35,6 +35,7 @@ android {
 dependencies {
 
     implementation(project(":uikit"))
+    implementation(project(":navigation"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

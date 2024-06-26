@@ -40,6 +40,11 @@ dependencies {
 
     implementation(project(":activity"))
     implementation(project(":core:bridge"))
+    implementation(project(":feat-search:impl"))
+    implementation(project(":feat-hotels"))
+    implementation(project(":feat-shorter-way"))
+    implementation(project(":feat-subscriptions"))
+    implementation(project(":feat-profile"))
 
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)

@@ -1,7 +1,7 @@
 package com.andreirookie.bridge
 
-import com.andreirookie.api.AppContextProvider
-import com.andreirookie.api.NetworkProvider
+import com.andreirookie.impl.AppContextProvider
+import com.andreirookie.impl.NetworkProvider
 import com.andreirookie.impl.network.DaggerNetworkComponent
 
 object CoreProvidersFactory {
