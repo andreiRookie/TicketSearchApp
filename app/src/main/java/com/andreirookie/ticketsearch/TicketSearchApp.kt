@@ -1,8 +1,8 @@
 package com.andreirookie.ticketsearch
 
 import android.app.Application
-import com.andreirookie.api.AppWithProvidersFacade
-import com.andreirookie.api.ProvidersFacade
+import com.andreirookie.impl.AppWithProvidersFacade
+import com.andreirookie.impl.ProvidersFacade
 
 class TicketSearchApp : Application(), AppWithProvidersFacade {
 

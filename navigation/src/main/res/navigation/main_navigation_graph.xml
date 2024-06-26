@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation_graph"
+    app:startDestination="@id/search_nav">
+
+    <fragment
+        android:id="@+id/search_nav"
+        android:name="com.andreirookie.impl.SearchFragment"
+        android:label="search"
+        tools:layout="@layout/search_fragment_layout"/>
+
+    <fragment
+        android:id="@+id/hotels_nav"
+        android:name="com.andreirookie.feat_hotels.HotelsFragment"
+        android:label="hotels"
+        tools:layout="@layout/stub_fragment_layout"/>
+
+    <fragment
+        android:id="@+id/shorter_way_nav"
+        android:name="com.andreirookie.feat_shorter_way.ShorterWayFragment"
+        android:label="shorter_way"
+        tools:layout="@layout/stub_fragment_layout"/>
+
+    <fragment
+        android:id="@+id/subscriptions_nav"
+        android:name="com.andreirookie.feat_subscriptions.SubscriptionsFragment"
+        android:label="subscriptions"
+        tools:layout="@layout/stub_fragment_layout"/>
+
+    <fragment
+        android:id="@+id/profile_nav"
+        android:name="com.andreirookie.feat_profile.ProfileFragment"
+        android:label="profile"
+        tools:layout="@layout/stub_fragment_layout"/>
+
+</navigation>
