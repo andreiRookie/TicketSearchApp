@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="search_screen_title_text">Поиск дешевых\nавиабилетов</string>
+    <string name="search_screen_header_text">Музыкально отлететь</string>
+    <string name="search_screen_from_edittext_hint">"Откуда - Москва"</string>
+    <string name="search_screen_to_edittext_hint">"Куда - Турция"</string>
 </resources>
