@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
         android:id="@+id/screen_title"
@@ -37,13 +38,47 @@
     </FrameLayout>
 
     <TextView
-        android:id="@+id/header_textview"
+        android:id="@+id/header_1_textview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:textAppearance="@style/screen_title_text_style"
-        android:text="@string/search_screen_header_text"
+        android:text="@string/search_screen_header_1_text"
         app:layout_constraintTop_toBottomOf="@id/search_block"
+        app:layout_constraintStart_toStartOf="@id/search_block"
+        app:layout_constraintEnd_toEndOf="@id/search_block"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/offers_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="216dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/header_1_textview"
+        app:layout_constraintStart_toStartOf="@id/search_block"
+        app:layout_constraintEnd_toEndOf="@id/search_block"
+        tools:listitem="@layout/offer_item_layout"/>
+
+    <Button
+        android:id="@+id/show_all_places_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:cornerRadius="8dp"
+        style="@style/show_all_places_button_style"
+        android:text="@string/show_all_places_button_text"
+        app:layout_constraintEnd_toEndOf="@id/search_block"
+        app:layout_constraintStart_toStartOf="@id/search_block"
+        app:layout_constraintTop_toBottomOf="@id/offers_recyclerview" />
+
+    <TextView
+        android:id="@+id/header_2_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textAppearance="@style/screen_title_text_style"
+        android:textColor="@color/grey_5"
+        android:text="@string/search_screen_header_2_text"
+        app:layout_constraintTop_toBottomOf="@id/show_all_places_button"
         app:layout_constraintStart_toStartOf="@id/search_block"
         app:layout_constraintEnd_toEndOf="@id/search_block"/>
 

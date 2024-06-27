@@ -42,4 +42,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(project(":uikit"))
+
+    implementation(libs.kotlinxSerializationJson)
 }
