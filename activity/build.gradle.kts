@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.jetbrainsKotlinKapt)
 }
 
 android {
@@ -36,6 +37,7 @@ dependencies {
 
     implementation(project(":uikit"))
     implementation(project(":navigation"))
+    implementation(project(":core:api"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -43,4 +45,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+    implementation(libs.retrofit)
 }
