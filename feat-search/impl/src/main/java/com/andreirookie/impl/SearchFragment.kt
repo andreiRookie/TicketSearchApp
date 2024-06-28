@@ -2,6 +2,8 @@ package com.andreirookie.impl
 
 import android.content.Context
 import android.os.Bundle
+import android.text.InputFilter
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +15,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.andreirookie.impl.di.SearchFragmentComponent
+import com.andreirookie.base_cyrillic_validation.CyrillicInputFilter
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -50,7 +53,12 @@ class SearchFragment : Fragment() {
         progressBar = view.findViewById(R.id.progress_bar)
 
         fromEdittext.hint = getString(R.string.search_screen_from_edittext_hint)
+        fromEdittext.inputType = InputType.TYPE_CLASS_TEXT
+        fromEdittext.filters = arrayOf<InputFilter>(CyrillicInputFilter())
+
         toEdittext.hint = getString(R.string.search_screen_to_edittext_hint)
+        toEdittext.inputType = InputType.TYPE_CLASS_TEXT
+        toEdittext.filters = arrayOf<InputFilter>(CyrillicInputFilter())
 
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -67,7 +75,7 @@ class SearchFragment : Fragment() {
                 progressBar.visibility = View.VISIBLE
             }
             is OffersState.Data -> {
-//                progressBar.visibility = View.GONE
+                progressBar.visibility = View.GONE
                 println(state.offers)
             }
             is OffersState.Error -> {
