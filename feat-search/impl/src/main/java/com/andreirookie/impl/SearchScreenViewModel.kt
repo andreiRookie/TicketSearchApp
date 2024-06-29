@@ -3,7 +3,6 @@ package com.andreirookie.impl
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.andreirookie.impl.network.OfferItemApiModel
 import com.andreirookie.impl.reposirory.OffersRepository
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
