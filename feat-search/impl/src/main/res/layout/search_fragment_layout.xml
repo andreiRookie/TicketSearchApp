@@ -51,11 +51,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/offers_recyclerview"
         android:layout_width="0dp"
-        android:layout_height="216dp"
+        android:layout_height="0dp"
         android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@id/header_1_textview"
         app:layout_constraintStart_toStartOf="@id/search_block"
         app:layout_constraintEnd_toEndOf="@id/search_block"
+        app:layout_constraintBottom_toTopOf="@id/show_all_places_button"
         tools:listitem="@layout/offer_item_layout"/>
 
     <ProgressBar
@@ -74,13 +75,14 @@
         android:id="@+id/show_all_places_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:cornerRadius="8dp"
         style="@style/show_all_places_button_style"
         android:text="@string/show_all_places_button_text"
         app:layout_constraintEnd_toEndOf="@id/search_block"
         app:layout_constraintStart_toStartOf="@id/search_block"
-        app:layout_constraintTop_toBottomOf="@id/offers_recyclerview" />
+        app:layout_constraintTop_toBottomOf="@id/offers_recyclerview"
+        app:layout_constraintBottom_toTopOf="@id/header_2_textview"/>
 
 
     <TextView
@@ -88,12 +90,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
         android:textAppearance="@style/screen_title_text_style"
         android:textColor="@color/grey_5"
         android:text="@string/search_screen_header_2_text"
         app:layout_constraintTop_toBottomOf="@id/show_all_places_button"
         app:layout_constraintStart_toStartOf="@id/search_block"
-        app:layout_constraintEnd_toEndOf="@id/search_block"/>
+        app:layout_constraintEnd_toEndOf="@id/search_block"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

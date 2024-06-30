@@ -8,14 +8,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.andreirookie.base_cyrillic_validation.CyrillicInputFilter
 import com.andreirookie.impl.di.SearchFragmentComponent
+import com.andreirookie.impl.recycler.OffersAdapter
+import com.andreirookie.impl.recycler.Stubs
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -29,6 +35,8 @@ class SearchFragment : Fragment() {
     @Inject
     lateinit var vmFactory: SearchScreenViewModel.Factory
     private val viewModel: SearchScreenViewModel by viewModels { vmFactory }
+
+    private lateinit var offersAdapter: OffersAdapter
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -48,6 +56,11 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        offersAdapter = OffersAdapter(Stubs.offers)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.offers_recyclerview)
+        recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        recyclerView.adapter = offersAdapter
 
         fromWhereEditText = view.findViewById(com.andreirookie.uikit.R.id.from_where_edittext)
         whereEditText = view.findViewById(com.andreirookie.uikit.R.id.where_edittext)
@@ -95,7 +108,6 @@ class SearchFragment : Fragment() {
             }
             is OffersState.Error -> {
                 progressBar.visibility = View.GONE
-
             }
             OffersState.Init -> {
                 progressBar.visibility = View.GONE
