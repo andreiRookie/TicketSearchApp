@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_navigate_to_element_stub_frag"
             app:destination="@id/element_stub_screen_nav" />
+        <action
+            android:id="@+id/action_navigate_to_date_search_screen"
+            app:destination="@id/date_search_screen_nav"/>
     </fragment>
 
     <fragment
@@ -39,20 +42,15 @@
         android:label="profile"
         tools:layout="@layout/stub_fragment_layout" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/search_bottom_dialog_nav"-->
-<!--        android:name="com.andreirookie.impl.SearchBottomDialogFragment"-->
-<!--        android:label="search_bottom_dialog"-->
-<!--        tools:layout="@layout/bottom_sheet_layout">-->
-<!--        <action-->
-<!--            android:id="@+id/action_navigate_to_element_stub_frag"-->
-<!--            app:destination="@id/element_stub_screen_nav" />-->
-<!--    </fragment>-->
-
     <fragment
         android:id="@+id/element_stub_screen_nav"
         android:name="com.andreirookie.impl.ElementStubFragment"
         android:label="element_stub"
-        tools:layout="@layout/layout/element_stub_screen_layout" />
+        tools:layout="@layout/element_stub_screen_layout" />
 
+    <fragment
+        android:id="@+id/date_search_screen_nav"
+        android:name="com.andreirookie.impl.DateSearchFragment"
+        android:label="date_search"
+        tools:layout="@layout/date_search_screen_layout"/>
 </navigation>

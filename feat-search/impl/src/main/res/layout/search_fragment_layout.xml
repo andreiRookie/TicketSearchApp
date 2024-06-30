@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:indeterminateTint="@color/dark_blue"
-        android:progressTint="@color/blue"
+        android:progressTint="@color/light_blue"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/offers_recyclerview"
         app:layout_constraintEnd_toEndOf="@id/offers_recyclerview"
@@ -74,7 +74,7 @@
     <Button
         android:id="@+id/show_all_places_button"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="42dp"
         android:layout_marginTop="16dp"
         app:cornerRadius="8dp"
         style="@style/show_all_places_button_style"

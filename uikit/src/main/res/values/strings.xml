@@ -11,4 +11,5 @@
     <string name="weekend">Выходные</string>
     <string name="hot_tickets">Горячие билеты</string>
     <string name="popular_destination">Популярное направление</string>
+    <string name="price_subscription">Подписка на цену</string>
 </resources>

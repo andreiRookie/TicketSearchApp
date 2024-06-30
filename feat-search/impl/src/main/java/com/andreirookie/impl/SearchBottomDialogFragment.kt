@@ -15,6 +15,7 @@ import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.andreirookie.base_cyrillic_validation.CyrillicInputFilter
+import com.andreirookie.impl.util.EditTextWatcherFacade
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -64,6 +65,19 @@ class SearchBottomDialogFragment : BottomSheetDialogFragment() {
         }
 
         arguments?.let { fromWhereEditText.setText(it.getString(FROM_WHERE_INPUT_ARG)) }
+
+        EditTextWatcherFacade(fromWhereEditText).startListen {
+            if (areFieldsFilledIn() && !fromWhereEditText.isFocused) {
+                dialog?.dismiss()
+                findNavController().navigate(com.andreirookie.navigation.R.id.action_navigate_to_date_search_screen)
+            }
+        }
+        EditTextWatcherFacade(whereEditText).startListen {
+            if (areFieldsFilledIn() && !whereEditText.isFocused) {
+                dialog?.dismiss()
+                findNavController().navigate(com.andreirookie.navigation.R.id.action_navigate_to_date_search_screen)
+            }
+        }
     }
 
     private fun setupSearchBlock(view: View) {
@@ -184,6 +198,11 @@ class SearchBottomDialogFragment : BottomSheetDialogFragment() {
 
     fun putInputArg(arg: String) {
         arguments = bundleOf(Pair(FROM_WHERE_INPUT_ARG, arg))
+    }
+
+    private fun areFieldsFilledIn(): Boolean {
+        return fromWhereEditText.text.isNotEmpty() &&
+                whereEditText.text.isNotEmpty()
     }
 
     private fun Int.dp(): Int =

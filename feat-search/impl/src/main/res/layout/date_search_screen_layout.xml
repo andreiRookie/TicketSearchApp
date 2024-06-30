@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include
+        android:id="@+id/search_block"
+        layout="@layout/search_edittext_fields_block"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        app:layout_constraintTop_toBottomOf="@id/search_block"
+        app:layout_constraintStart_toStartOf="@id/search_block"
+        app:layout_constraintEnd_toEndOf="@id/search_block"
+        tools:listItem="@layout/chip_item_layout"/>
+
+    <LinearLayout
+        android:id="@+id/recommendations_block"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/subscription_bar_background_shape"
+        app:layout_constraintTop_toBottomOf="@id/chip_group"
+        app:layout_constraintStart_toStartOf="@id/search_block"
+        app:layout_constraintEnd_toEndOf="@id/search_block">
+
+        <TextView
+            android:id="@+id/recommendations_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="@string/direct_flights"
+            />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ticket_recommendations_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="288dp"
+            tools:listitem="@layout/recommendation_item_layout"
+            />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/show_all_places_button"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        app:cornerRadius="8dp"
+        style="@style/show_all_recommendations_button_style"
+        android:text="@string/show_all_tickets"
+        app:layout_constraintEnd_toEndOf="@id/search_block"
+        app:layout_constraintStart_toStartOf="@id/search_block"
+        app:layout_constraintTop_toBottomOf="@id/recommendations_block" />
+
+    <include
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/subscription_bar_layout"
+        app:layout_constraintTop_toBottomOf="@id/show_all_places_button"
+        app:layout_constraintStart_toStartOf="@id/search_block"
+        app:layout_constraintEnd_toEndOf="@id/search_block"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

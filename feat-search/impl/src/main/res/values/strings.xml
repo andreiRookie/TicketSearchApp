@@ -6,4 +6,6 @@
     <string name="search_screen_from_edittext_hint">"Откуда - Москва"</string>
     <string name="search_screen_to_edittext_hint">"Куда - Турция"</string>
     <string name="show_all_places_button_text">Показать все места</string>
+    <string name="show_all_tickets">Посмотреть все билеты</string>
+    <string name="direct_flights">Прямые рейсы</string>
 </resources>
