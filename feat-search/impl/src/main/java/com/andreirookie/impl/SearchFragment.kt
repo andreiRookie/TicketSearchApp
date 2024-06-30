@@ -81,6 +81,8 @@ class SearchFragment : Fragment() {
             if (bottomSheetDialogFragment == null) {
                 bottomSheetDialogFragment = SearchBottomDialogFragment()
             }
+
+            bottomSheetDialogFragment?.putInputArg(fromWhereEditText.text.toString())
             bottomSheetDialogFragment?.show(parentFragmentManager, SearchBottomDialogFragment.TAG)
         }
 

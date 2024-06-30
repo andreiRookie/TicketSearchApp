@@ -1,10 +1,8 @@
 package com.andreirookie.impl
 
 import android.os.Bundle
-import android.text.Editable
 import android.text.InputFilter
 import android.text.InputType
-import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +12,7 @@ import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.andreirookie.base_cyrillic_validation.CyrillicInputFilter
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -63,6 +62,8 @@ class SearchBottomDialogFragment : BottomSheetDialogFragment() {
             bottomSheet.layoutParams = layoutParams
             bottomBehavior.state = BottomSheetBehavior.STATE_EXPANDED
         }
+
+        arguments?.let { fromWhereEditText.setText(it.getString(FROM_WHERE_INPUT_ARG)) }
     }
 
     private fun setupSearchBlock(view: View) {
@@ -181,10 +182,15 @@ class SearchBottomDialogFragment : BottomSheetDialogFragment() {
         }
     }
 
+    fun putInputArg(arg: String) {
+        arguments = bundleOf(Pair(FROM_WHERE_INPUT_ARG, arg))
+    }
+
     private fun Int.dp(): Int =
         (this * requireContext().resources.displayMetrics.density).toInt()
 
     companion object {
-        val TAG = "SearchBottomDialogFragment"
+        const val TAG = "SearchBottomDialogFragment"
+        private const val FROM_WHERE_INPUT_ARG = "arg_input"
     }
 }
