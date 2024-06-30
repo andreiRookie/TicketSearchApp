@@ -45,7 +45,6 @@
         android:id="@+id/where_edittext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:focusable="false"
         app:layout_constraintTop_toBottomOf="@id/delimiter"
         app:layout_constraintStart_toStartOf="@id/from_where_edittext"
         app:layout_constraintEnd_toStartOf="@id/where_edittext_delete_button"

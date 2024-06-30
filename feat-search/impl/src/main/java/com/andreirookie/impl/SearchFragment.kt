@@ -74,6 +74,7 @@ class SearchFragment : Fragment() {
 
         whereEditText.hint = getString(R.string.search_screen_to_edittext_hint)
         whereEditText.inputType = InputType.TYPE_NULL
+        whereEditText.focusable = View.NOT_FOCUSABLE
         whereEditText.filters = arrayOf<InputFilter>(CyrillicInputFilter())
 
         whereEditText.setOnClickListener {

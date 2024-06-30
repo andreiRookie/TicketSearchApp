@@ -1,8 +1,10 @@
 package com.andreirookie.impl
 
 import android.os.Bundle
+import android.text.Editable
 import android.text.InputFilter
 import android.text.InputType
+import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +14,7 @@ import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import com.andreirookie.base_cyrillic_validation.CyrillicInputFilter
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -107,11 +110,20 @@ class SearchBottomDialogFragment : BottomSheetDialogFragment() {
         val header1 = element1.findViewById<TextView>(com.andreirookie.uikit.R.id.element_header)
         header1.text = getString(com.andreirookie.uikit.R.string.complex_route)
 
+        element1.setOnClickListener {
+            dialog?.dismiss()
+            findNavController().navigate(com.andreirookie.navigation.R.id.action_navigate_to_element_stub_frag)
+        }
+
         val element2 = view.findViewById<View>(R.id.element_2)
         element2.findViewById<ImageView>(com.andreirookie.uikit.R.id.element_icon)
             .setImageResource(com.andreirookie.uikit.R.drawable.img_globe)
         val header2 = element2.findViewById<TextView>(com.andreirookie.uikit.R.id.element_header)
         header2.text = getString(com.andreirookie.uikit.R.string.anywhere)
+
+        element2.setOnClickListener {
+            whereEditText.setText(header2.text)
+        }
 
         val element3 = view.findViewById<View>(R.id.element_3)
         element3.findViewById<ImageView>(com.andreirookie.uikit.R.id.element_icon)
@@ -119,11 +131,21 @@ class SearchBottomDialogFragment : BottomSheetDialogFragment() {
         val header3 = element3.findViewById<TextView>(com.andreirookie.uikit.R.id.element_header)
         header3.text = getString(com.andreirookie.uikit.R.string.weekend)
 
+        element3.setOnClickListener {
+            dialog?.dismiss()
+            findNavController().navigate(com.andreirookie.navigation.R.id.action_navigate_to_element_stub_frag)
+        }
+
         val element4 = view.findViewById<View>(R.id.element_4)
         element4.findViewById<ImageView>(com.andreirookie.uikit.R.id.element_icon)
             .setImageResource(com.andreirookie.uikit.R.drawable.img_flame)
         val header4 = element4.findViewById<TextView>(com.andreirookie.uikit.R.id.element_header)
         header4.text = getString(com.andreirookie.uikit.R.string.hot_tickets)
+
+        element4.setOnClickListener {
+            dialog?.dismiss()
+            findNavController().navigate(com.andreirookie.navigation.R.id.action_navigate_to_element_stub_frag)
+        }
     }
 
     private fun setupHintsBlock(view: View) {

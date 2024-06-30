@@ -47,6 +47,7 @@ dependencies {
     implementation(project(":core:api"))
     implementation(project(":base-cyrillic-validation"))
     implementation(project(":base-decimal-formatter"))
+    implementation(project(":navigation"))
 
     implementation(libs.kotlinxSerializationJson)
 

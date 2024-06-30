@@ -9,30 +9,50 @@
         android:id="@+id/search_nav"
         android:name="com.andreirookie.impl.SearchFragment"
         android:label="search"
-        tools:layout="@layout/search_fragment_layout"/>
+        tools:layout="@layout/search_fragment_layout">
+        <action
+            android:id="@+id/action_navigate_to_element_stub_frag"
+            app:destination="@id/element_stub_screen_nav" />
+    </fragment>
 
     <fragment
         android:id="@+id/hotels_nav"
         android:name="com.andreirookie.feat_hotels.HotelsFragment"
         android:label="hotels"
-        tools:layout="@layout/stub_fragment_layout"/>
+        tools:layout="@layout/stub_fragment_layout" />
 
     <fragment
         android:id="@+id/shorter_way_nav"
         android:name="com.andreirookie.feat_shorter_way.ShorterWayFragment"
         android:label="shorter_way"
-        tools:layout="@layout/stub_fragment_layout"/>
+        tools:layout="@layout/stub_fragment_layout" />
 
     <fragment
         android:id="@+id/subscriptions_nav"
         android:name="com.andreirookie.feat_subscriptions.SubscriptionsFragment"
         android:label="subscriptions"
-        tools:layout="@layout/stub_fragment_layout"/>
+        tools:layout="@layout/stub_fragment_layout" />
 
     <fragment
         android:id="@+id/profile_nav"
         android:name="com.andreirookie.feat_profile.ProfileFragment"
         android:label="profile"
-        tools:layout="@layout/stub_fragment_layout"/>
+        tools:layout="@layout/stub_fragment_layout" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/search_bottom_dialog_nav"-->
+<!--        android:name="com.andreirookie.impl.SearchBottomDialogFragment"-->
+<!--        android:label="search_bottom_dialog"-->
+<!--        tools:layout="@layout/bottom_sheet_layout">-->
+<!--        <action-->
+<!--            android:id="@+id/action_navigate_to_element_stub_frag"-->
+<!--            app:destination="@id/element_stub_screen_nav" />-->
+<!--    </fragment>-->
+
+    <fragment
+        android:id="@+id/element_stub_screen_nav"
+        android:name="com.andreirookie.impl.ElementStubFragment"
+        android:label="element_stub"
+        tools:layout="@layout/layout/element_stub_screen_layout" />
 
 </navigation>
