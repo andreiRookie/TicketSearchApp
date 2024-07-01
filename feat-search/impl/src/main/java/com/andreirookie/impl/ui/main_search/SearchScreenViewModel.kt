@@ -1,4 +1,4 @@
-package com.andreirookie.impl
+package com.andreirookie.impl.ui.main_search
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

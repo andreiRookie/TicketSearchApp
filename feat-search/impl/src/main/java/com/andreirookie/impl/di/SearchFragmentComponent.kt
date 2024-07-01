@@ -1,7 +1,7 @@
 package com.andreirookie.impl.di
 
 import com.andreirookie.impl.ProvidersFacade
-import com.andreirookie.impl.SearchFragment
+import com.andreirookie.impl.ui.main_search.SearchFragment
 import dagger.Component
 import javax.inject.Singleton
 

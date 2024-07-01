@@ -16,15 +16,26 @@
         <item name="android:drawablePadding">8dp</item>
     </style>
 
-    <style name="chip_button_style">
-        <!--        <item name="background">@drawable/tag_bg_selector</item>-->
-        <item name="android:fontFamily">@font/roboto_italic</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textAlignment">center</item>
-        <!--        <item name="android:drawablePadding">6dp</item>-->
-        <!--        <item name="android:drawableEnd">@drawable/tag_button_drawable_selector</item>-->
-        <item name="android:textColor">@color/white</item>
+    <style name="chip_style" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="android:checkable">true</item>
+        <item name="chipIconVisible">true</item>
+        <item name="iconStartPadding">2dp</item>
 
+        <item name="checkedIconVisible">false</item>
+        <item name="closeIconVisible">false</item>
+        <item name="chipBackgroundColor">@color/grey_3</item>
+        <item name="rippleColor">@android:color/transparent</item>
+        <item name="chipCornerRadius">50dp</item>
+        <item name="textEndPadding">2dp</item>
+        <item name="android:paddingVertical">4dp</item>
+        <item name="textStartPadding">8dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="chipStrokeWidth">0dp</item>
+<!--        <item name="chipStrokeColor">@android:color/transparent</item>-->
+        <item name="android:textAppearance">@style/chip_text_style</item>
+    </style>
+    <style name="chip_text_style" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/roboto_italic</item>
     </style>
 </resources>

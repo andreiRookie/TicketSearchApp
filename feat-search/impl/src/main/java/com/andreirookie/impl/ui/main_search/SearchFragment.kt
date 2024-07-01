@@ -1,4 +1,4 @@
-package com.andreirookie.impl
+package com.andreirookie.impl.ui.main_search
 
 import android.content.Context
 import android.os.Bundle
@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import android.widget.LinearLayout
 import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -17,11 +16,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.andreirookie.base_cyrillic_validation.CyrillicInputFilter
+import com.andreirookie.impl.AppWithProvidersFacade
+import com.andreirookie.impl.R
 import com.andreirookie.impl.di.SearchFragmentComponent
-import com.andreirookie.impl.recycler.OffersAdapter
-import com.andreirookie.impl.recycler.Stubs
+import com.andreirookie.impl.ui.bottom.SearchBottomDialogFragment
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -60,6 +59,7 @@ class SearchFragment : Fragment() {
         offersAdapter = OffersAdapter(Stubs.offers)
         val recyclerView = view.findViewById<RecyclerView>(R.id.offers_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        recyclerView.setHasFixedSize(true)
         recyclerView.adapter = offersAdapter
 
         fromWhereEditText = view.findViewById(com.andreirookie.uikit.R.id.from_where_edittext)

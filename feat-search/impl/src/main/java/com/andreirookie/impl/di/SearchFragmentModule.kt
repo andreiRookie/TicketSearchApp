@@ -1,7 +1,7 @@
 package com.andreirookie.impl.di
 
 import androidx.lifecycle.ViewModelProvider
-import com.andreirookie.impl.SearchScreenViewModel
+import com.andreirookie.impl.ui.main_search.SearchScreenViewModel
 import com.andreirookie.impl.network.OffersApiController
 import com.andreirookie.impl.reposirory.OffersRepository
 import com.andreirookie.impl.reposirory.OffersRepositoryImpl

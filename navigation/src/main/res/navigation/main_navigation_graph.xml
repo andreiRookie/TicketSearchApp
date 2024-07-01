@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/search_nav"
-        android:name="com.andreirookie.impl.SearchFragment"
+        android:name="com.andreirookie.impl.ui.main_search.SearchFragment"
         android:label="search"
         tools:layout="@layout/search_fragment_layout">
         <action
@@ -44,13 +44,13 @@
 
     <fragment
         android:id="@+id/element_stub_screen_nav"
-        android:name="com.andreirookie.impl.ElementStubFragment"
+        android:name="com.andreirookie.impl.ui.bottom.ElementStubFragment"
         android:label="element_stub"
         tools:layout="@layout/element_stub_screen_layout" />
 
     <fragment
         android:id="@+id/date_search_screen_nav"
-        android:name="com.andreirookie.impl.DateSearchFragment"
+        android:name="com.andreirookie.impl.ui.date.DateSearchFragment"
         android:label="date_search"
         tools:layout="@layout/date_search_screen_layout"/>
 </navigation>

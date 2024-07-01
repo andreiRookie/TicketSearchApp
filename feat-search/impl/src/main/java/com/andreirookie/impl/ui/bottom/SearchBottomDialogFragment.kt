@@ -1,4 +1,4 @@
-package com.andreirookie.impl
+package com.andreirookie.impl.ui.bottom
 
 import android.os.Bundle
 import android.text.InputFilter
@@ -15,6 +15,7 @@ import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.andreirookie.base_cyrillic_validation.CyrillicInputFilter
+import com.andreirookie.impl.R
 import com.andreirookie.impl.util.EditTextWatcherFacade
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -28,7 +29,7 @@ class SearchBottomDialogFragment : BottomSheetDialogFragment() {
     private lateinit var hintItem2: ViewGroup
     private lateinit var hintItem3: ViewGroup
 
-    private lateinit var whereEditTextDeleteButton: ImageButton
+    private lateinit var whereEditTextButton: ImageButton
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -69,29 +70,38 @@ class SearchBottomDialogFragment : BottomSheetDialogFragment() {
         EditTextWatcherFacade(fromWhereEditText).startListen {
             if (areFieldsFilledIn() && !fromWhereEditText.isFocused) {
                 dialog?.dismiss()
-                findNavController().navigate(com.andreirookie.navigation.R.id.action_navigate_to_date_search_screen)
+                val bundle = bundleOf(
+                    "fromWhereArg" to fromWhereEditText.text.toString(),
+                    "whereArg" to whereEditText.text.toString()
+                )
+                findNavController()
+                    .navigate(com.andreirookie.navigation.R.id.action_navigate_to_date_search_screen, bundle)
             }
         }
         EditTextWatcherFacade(whereEditText).startListen {
             if (areFieldsFilledIn() && !whereEditText.isFocused) {
                 dialog?.dismiss()
-                findNavController().navigate(com.andreirookie.navigation.R.id.action_navigate_to_date_search_screen)
+                val bundle = bundleOf(
+                    "fromWhereArg" to fromWhereEditText.text.toString(),
+                    "whereArg" to whereEditText.text.toString()
+                    )
+                findNavController()
+                    .navigate(com.andreirookie.navigation.R.id.action_navigate_to_date_search_screen, bundle)
             }
         }
     }
 
     private fun setupSearchBlock(view: View) {
-        val searchBlock = view.findViewById<ViewGroup>(R.id.search_block)
-        val loupeIcon = searchBlock.findViewById<ImageView>(com.andreirookie.uikit.R.id.loupe_icon)
-        loupeIcon.visibility = View.GONE
+        val searchIcon = view.findViewById<ImageView>(com.andreirookie.uikit.R.id.search_icon)
+        searchIcon.visibility = View.GONE
 
-        whereEditTextDeleteButton = searchBlock.findViewById(com.andreirookie.uikit.R.id.where_edittext_delete_button)
-        whereEditTextDeleteButton.visibility = View.VISIBLE
-        whereEditTextDeleteButton.setOnClickListener {
+        whereEditTextButton = view.findViewById(com.andreirookie.uikit.R.id.where_edittext_button)
+        whereEditTextButton.visibility = View.VISIBLE
+        whereEditTextButton.setOnClickListener {
             whereEditText.text.clear()
         }
 
-        fromWhereEditText = searchBlock.findViewById(com.andreirookie.uikit.R.id.from_where_edittext)
+        fromWhereEditText = view.findViewById(com.andreirookie.uikit.R.id.from_where_edittext)
         with(fromWhereEditText) {
             setCompoundDrawablesWithIntrinsicBounds(
                 com.andreirookie.uikit.R.drawable.ic_plane_turned_24,
@@ -104,7 +114,7 @@ class SearchBottomDialogFragment : BottomSheetDialogFragment() {
             filters = arrayOf<InputFilter>(CyrillicInputFilter())
         }
 
-        whereEditText = searchBlock.findViewById(com.andreirookie.uikit.R.id.where_edittext)
+        whereEditText = view.findViewById(com.andreirookie.uikit.R.id.where_edittext)
         with(whereEditText) {
             setCompoundDrawablesWithIntrinsicBounds(
                 com.andreirookie.uikit.R.drawable.ic_loupe_white_24,
@@ -164,8 +174,8 @@ class SearchBottomDialogFragment : BottomSheetDialogFragment() {
     }
 
     private fun setupHintsBlock(view: View) {
-        val hintsBlock = view.findViewById<ViewGroup>(R.id.hints_block)
-        hintItem1 = hintsBlock.findViewById(R.id.hint_1)
+
+        hintItem1 = view.findViewById(R.id.hint_1)
         hintItem1.findViewById<ImageView>(R.id.hint_image)
             .setImageResource(com.andreirookie.uikit.R.drawable.img_hint_stub_1)
         val hint1TownTextView = hintItem1.findViewById<TextView>(R.id.hint_town_text_view)
@@ -175,7 +185,7 @@ class SearchBottomDialogFragment : BottomSheetDialogFragment() {
             whereEditText.setText(hint1TownTextView.text)
         }
 
-        hintItem2 = hintsBlock.findViewById(R.id.hint_2)
+        hintItem2 = view.findViewById(R.id.hint_2)
         hintItem2.findViewById<ImageView>(R.id.hint_image)
             .setImageResource(com.andreirookie.uikit.R.drawable.img_hint_stub_2)
         val hint2TownTextView = hintItem2.findViewById<TextView>(R.id.hint_town_text_view)
@@ -185,7 +195,7 @@ class SearchBottomDialogFragment : BottomSheetDialogFragment() {
             whereEditText.setText(hint2TownTextView.text)
         }
 
-        hintItem3 = hintsBlock.findViewById(R.id.hint_3)
+        hintItem3 = view.findViewById(R.id.hint_3)
         hintItem3.findViewById<ImageView>(R.id.hint_image)
             .setImageResource(com.andreirookie.uikit.R.drawable.img_hint_stub_3)
         val hint3TownTextView = hintItem3.findViewById<TextView>(R.id.hint_town_text_view)

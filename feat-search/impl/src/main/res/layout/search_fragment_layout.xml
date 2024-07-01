@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@id/header_1_textview"
         app:layout_constraintStart_toStartOf="@id/search_block"
         app:layout_constraintEnd_toEndOf="@id/search_block"
-        app:layout_constraintBottom_toTopOf="@id/show_all_places_button"
+        app:layout_constraintBottom_toTopOf="@id/show_all_tickets_button"
         tools:listitem="@layout/offer_item_layout"/>
 
     <ProgressBar
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toTopOf="@id/offers_recyclerview" />
 
     <Button
-        android:id="@+id/show_all_places_button"
+        android:id="@+id/show_all_tickets_button"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
@@ -94,7 +94,7 @@
         android:textAppearance="@style/screen_title_text_style"
         android:textColor="@color/grey_5"
         android:text="@string/search_screen_header_2_text"
-        app:layout_constraintTop_toBottomOf="@id/show_all_places_button"
+        app:layout_constraintTop_toBottomOf="@id/show_all_tickets_button"
         app:layout_constraintStart_toStartOf="@id/search_block"
         app:layout_constraintEnd_toEndOf="@id/search_block"
         app:layout_constraintBottom_toBottomOf="parent"/>

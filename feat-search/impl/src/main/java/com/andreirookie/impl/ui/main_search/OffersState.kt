@@ -1,4 +1,4 @@
-package com.andreirookie.impl
+package com.andreirookie.impl.ui.main_search
 
 import com.andreirookie.impl.network.OfferItemApiModel
 import java.lang.Exception

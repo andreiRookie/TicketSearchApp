@@ -1,4 +1,4 @@
-package com.andreirookie.impl.recycler
+package com.andreirookie.impl.ui.main_search
 
 import android.view.LayoutInflater
 import android.view.View
