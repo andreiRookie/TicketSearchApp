@@ -8,4 +8,5 @@
     <string name="show_all_places_button_text">Показать все места</string>
     <string name="show_all_tickets">Посмотреть все билеты</string>
     <string name="direct_flights">Прямые рейсы</string>
+    <string name="destination_title_text">%s - %s</string>
 </resources>

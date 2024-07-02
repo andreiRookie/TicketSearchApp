@@ -52,5 +52,15 @@
         android:id="@+id/date_search_screen_nav"
         android:name="com.andreirookie.impl.ui.date.DateSearchFragment"
         android:label="date_search"
-        tools:layout="@layout/date_search_screen_layout"/>
+        tools:layout="@layout/date_search_screen_layout">
+        <action
+            android:id="@+id/action_navigate_from_date_search_screen_to_tickets_screen"
+            app:destination="@id/tickets_screen_nav"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/tickets_screen_nav"
+        android:name="com.andreirookie.impl.ui.tickets.TicketsFragment"
+        android:label="tickets"
+        tools:layout="@layout/tickets_screen_layout"/>
 </navigation>

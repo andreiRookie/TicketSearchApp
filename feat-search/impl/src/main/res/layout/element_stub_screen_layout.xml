@@ -12,6 +12,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:backgroundTint="@android:color/transparent"
-        android:src="@drawable/ic_left_arrow_24"/>
+        android:src="@drawable/ic_arrow_left_24"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
