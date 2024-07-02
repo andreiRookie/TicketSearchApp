@@ -70,8 +70,6 @@ class SearchFragment : Fragment() {
         fromWhereEditText.inputType = InputType.TYPE_CLASS_TEXT
         fromWhereEditText.filters = arrayOf<InputFilter>(CyrillicInputFilter())
 
-        // TODO fromEdittext.text saving: SavedState VM / Prefs
-
         whereEditText.hint = getString(R.string.search_screen_to_edittext_hint)
         whereEditText.inputType = InputType.TYPE_NULL
         whereEditText.focusable = View.NOT_FOCUSABLE

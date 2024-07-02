@@ -69,7 +69,6 @@ class TicketAdapterDelegate : AdapterDelegate {
                 val badgeView = initBadge()
                 badgeView.text = it
                 badgeView.updateBadgeCoordinates(ticketCard, itemView as FrameLayout)
-//                ticketCard.overlay.add(badgeView)
                 BadgeUtils.attachBadgeDrawable(badgeView, ticketCard, itemView as FrameLayout);
             }
 
