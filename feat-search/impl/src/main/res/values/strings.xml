@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="search_screen_title_text">Поиск дешевых\nавиабилетов</string>
+    <string name="search_screen_header_1_text">Музыкально отлететь</string>
+    <string name="search_screen_header_2_text">Ваш первый раз</string>
+    <string name="search_screen_from_edittext_hint">"Откуда - Москва"</string>
+    <string name="search_screen_to_edittext_hint">"Куда - Турция"</string>
+    <string name="show_all_places_button_text">Показать все места</string>
+    <string name="show_all_tickets">Посмотреть все билеты</string>
+    <string name="direct_flights">Прямые рейсы</string>
+    <string name="destination_title_text">%s - %s</string>
+    <string name="no_transfer">Без пересадок</string>
 </resources>

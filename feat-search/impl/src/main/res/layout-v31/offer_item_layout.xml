@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+
+    <ImageView
+        android:id="@+id/offer_image"
+        android:layout_width="132dp"
+        android:layout_height="132dp"
+        android:background="@drawable/offer_img_shape"
+        android:clipToOutline="true"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/img_offer_1" />
+
+    <TextView
+        android:id="@+id/offer_title_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/offer_image"
+        app:layout_constraintEnd_toEndOf="@id/offer_image"
+        app:layout_constraintTop_toBottomOf="@id/offer_image"
+        tools:text="Die Antwoord" />
+
+    <TextView
+        android:id="@+id/offer_town_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/offer_image"
+        app:layout_constraintEnd_toEndOf="@id/offer_image"
+        app:layout_constraintTop_toBottomOf="@id/offer_title_textview"
+        tools:text="Будапешт" />
+
+    <ImageView
+        android:id="@+id/offer_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@id/offer_image"
+        app:layout_constraintTop_toBottomOf="@id/offer_town_textview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_plane_24"
+        />
+    
+    <TextView
+        android:id="@+id/offer_price_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@id/offer_icon"
+        app:layout_constraintBottom_toBottomOf="@id/offer_icon"
+        app:layout_constraintStart_toEndOf="@id/offer_icon"
+        tools:text="от 22 264 ₽ "/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,4 +5,14 @@
     <string name="shorter_way">Короче</string>
     <string name="subscriptions">Подписки</string>
     <string name="profile">Профиль</string>
+
+    <string name="complex_route">Сложный маршрут</string>
+    <string name="anywhere">Куда угодно</string>
+    <string name="weekend">Выходные</string>
+    <string name="hot_tickets">Горячие билеты</string>
+    <string name="popular_destination">Популярное направление</string>
+    <string name="price_subscription">Подписка на цену</string>
+
+    <string name="filter">Фильтр</string>
+    <string name="price_chart">График цен</string>
 </resources>

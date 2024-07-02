@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.jetbrainsKotlinKapt)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 android {
@@ -42,4 +44,16 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(project(":uikit"))
+    implementation(project(":core:api"))
+    implementation(project(":base-cyrillic-validation"))
+    implementation(project(":base-decimal-formatter"))
+    implementation(project(":navigation"))
+
+    implementation(libs.kotlinxSerializationJson)
+
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+    implementation(libs.retrofit)
+
+    implementation(libs.fragmentKtx)
 }

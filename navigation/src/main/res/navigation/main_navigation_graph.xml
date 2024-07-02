@@ -7,32 +7,60 @@
 
     <fragment
         android:id="@+id/search_nav"
-        android:name="com.andreirookie.impl.SearchFragment"
+        android:name="com.andreirookie.impl.ui.main_search.SearchFragment"
         android:label="search"
-        tools:layout="@layout/search_fragment_layout"/>
+        tools:layout="@layout/search_fragment_layout">
+        <action
+            android:id="@+id/action_navigate_to_element_stub_frag"
+            app:destination="@id/element_stub_screen_nav" />
+        <action
+            android:id="@+id/action_navigate_to_date_search_screen"
+            app:destination="@id/date_search_screen_nav"/>
+    </fragment>
 
     <fragment
         android:id="@+id/hotels_nav"
         android:name="com.andreirookie.feat_hotels.HotelsFragment"
         android:label="hotels"
-        tools:layout="@layout/stub_fragment_layout"/>
+        tools:layout="@layout/stub_fragment_layout" />
 
     <fragment
         android:id="@+id/shorter_way_nav"
         android:name="com.andreirookie.feat_shorter_way.ShorterWayFragment"
         android:label="shorter_way"
-        tools:layout="@layout/stub_fragment_layout"/>
+        tools:layout="@layout/stub_fragment_layout" />
 
     <fragment
         android:id="@+id/subscriptions_nav"
         android:name="com.andreirookie.feat_subscriptions.SubscriptionsFragment"
         android:label="subscriptions"
-        tools:layout="@layout/stub_fragment_layout"/>
+        tools:layout="@layout/stub_fragment_layout" />
 
     <fragment
         android:id="@+id/profile_nav"
         android:name="com.andreirookie.feat_profile.ProfileFragment"
         android:label="profile"
-        tools:layout="@layout/stub_fragment_layout"/>
+        tools:layout="@layout/stub_fragment_layout" />
 
+    <fragment
+        android:id="@+id/element_stub_screen_nav"
+        android:name="com.andreirookie.impl.ui.bottom.ElementStubFragment"
+        android:label="element_stub"
+        tools:layout="@layout/element_stub_screen_layout" />
+
+    <fragment
+        android:id="@+id/date_search_screen_nav"
+        android:name="com.andreirookie.impl.ui.date.DateSearchFragment"
+        android:label="date_search"
+        tools:layout="@layout/date_search_screen_layout">
+        <action
+            android:id="@+id/action_navigate_from_date_search_screen_to_tickets_screen"
+            app:destination="@id/tickets_screen_nav"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/tickets_screen_nav"
+        android:name="com.andreirookie.impl.ui.tickets.TicketsFragment"
+        android:label="tickets"
+        tools:layout="@layout/tickets_screen_layout"/>
 </navigation>
