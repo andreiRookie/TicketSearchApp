@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:strokeWidth="0dp"
-        android:background="@drawable/common_background_grey4_shape">
-
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/grey_1">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             xmlns:app="http://schemas.android.com/apk/res-auto"
