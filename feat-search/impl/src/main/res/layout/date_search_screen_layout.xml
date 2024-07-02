@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <include
-        android:id="@+id/search_block"
+        android:id="@+id/destination_block"
         layout="@layout/search_edittext_fields_block"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -21,9 +21,9 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="8dp"
         android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="@id/search_block"
-        app:layout_constraintStart_toStartOf="@id/search_block"
-        app:layout_constraintTop_toBottomOf="@id/search_block">
+        app:layout_constraintEnd_toEndOf="@id/destination_block"
+        app:layout_constraintStart_toStartOf="@id/destination_block"
+        app:layout_constraintTop_toBottomOf="@id/destination_block">
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chip_group"
@@ -75,8 +75,8 @@
         android:background="@drawable/subscription_bar_background_shape"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/show_all_tickets_button"
-        app:layout_constraintEnd_toEndOf="@id/search_block"
-        app:layout_constraintStart_toStartOf="@id/search_block"
+        app:layout_constraintEnd_toEndOf="@id/destination_block"
+        app:layout_constraintStart_toStartOf="@id/destination_block"
         app:layout_constraintTop_toBottomOf="@id/chip_group_scroll">
 
         <TextView
@@ -117,8 +117,8 @@
         android:text="@string/show_all_tickets"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toTopOf="@id/subscription_block"
-        app:layout_constraintEnd_toEndOf="@id/search_block"
-        app:layout_constraintStart_toStartOf="@id/search_block" />
+        app:layout_constraintEnd_toEndOf="@id/destination_block"
+        app:layout_constraintStart_toStartOf="@id/destination_block" />
 
     <include
         android:id="@+id/subscription_block"
@@ -127,6 +127,6 @@
         android:layout_height="52dp"
         android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/search_block"
-        app:layout_constraintStart_toStartOf="@id/search_block" />
+        app:layout_constraintEnd_toEndOf="@id/destination_block"
+        app:layout_constraintStart_toStartOf="@id/destination_block" />
 </androidx.constraintlayout.widget.ConstraintLayout>

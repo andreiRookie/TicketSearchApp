@@ -9,4 +9,5 @@
     <string name="show_all_tickets">Посмотреть все билеты</string>
     <string name="direct_flights">Прямые рейсы</string>
     <string name="destination_title_text">%s - %s</string>
+    <string name="no_transfer">Без пересадок</string>
 </resources>

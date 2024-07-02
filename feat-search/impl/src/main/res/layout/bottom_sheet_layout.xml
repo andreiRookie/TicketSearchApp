@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <include
-        android:id="@+id/search_block"
+        android:id="@+id/destination_block"
         layout="@layout/search_edittext_fields_block"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -32,8 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toStartOf="@id/element_2"
-        app:layout_constraintStart_toStartOf="@id/search_block"
-        app:layout_constraintTop_toBottomOf="@id/search_block" />
+        app:layout_constraintStart_toStartOf="@id/destination_block"
+        app:layout_constraintTop_toBottomOf="@id/destination_block" />
 
     <include
         android:id="@+id/element_2"
@@ -58,7 +58,7 @@
         layout="@layout/element_item_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/search_block"
+        app:layout_constraintEnd_toEndOf="@id/destination_block"
         app:layout_constraintStart_toEndOf="@id/element_3"
         app:layout_constraintTop_toTopOf="@id/element_1"/>
 
@@ -70,8 +70,8 @@
         android:background="@drawable/common_background_grey3_shape"
         android:orientation="vertical"
         android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="@id/search_block"
-        app:layout_constraintStart_toStartOf="@id/search_block"
+        app:layout_constraintEnd_toEndOf="@id/destination_block"
+        app:layout_constraintStart_toStartOf="@id/destination_block"
         app:layout_constraintTop_toBottomOf="@id/element_1">
 
         <include

@@ -49,7 +49,11 @@ class TicketAdapterDelegate : AdapterDelegate {
             arrivalAirport.text = model.arrival.airport
 
             val hasTransfer = view.findViewById<TextView>(R.id.has_transfer)
-            if (!model.hasTransfer) hasTransfer.visibility = View.VISIBLE
+            if (model.hasTransfer) {
+                hasTransfer.visibility = View.INVISIBLE
+            } else {
+                hasTransfer.visibility = View.VISIBLE
+            }
 
         }
     }

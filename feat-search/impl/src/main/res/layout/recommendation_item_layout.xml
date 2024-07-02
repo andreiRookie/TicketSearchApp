@@ -33,8 +33,9 @@
         android:id="@+id/time_range_textview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="8dp"
         android:ellipsize="end"
+        android:textSize="14sp"
         android:maxLines="1"
         app:layout_constraintStart_toStartOf="@id/airline_title"
         app:layout_constraintTop_toBottomOf="@id/airline_title"
@@ -46,6 +47,7 @@
         android:id="@+id/recommendation_price"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:fontFamily="@font/roboto_italic"
         android:textColor="@color/blue"
         app:layout_constraintTop_toTopOf="@id/recommendation_color_point_view"
         app:layout_constraintEnd_toStartOf="@id/price_arrow_icon"/>
@@ -54,6 +56,7 @@
         android:id="@+id/price_arrow_icon"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:textSize="14sp"
         android:src="@drawable/ic_arrow_right_blue_16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/recommendation_color_point_view"
@@ -67,6 +70,7 @@
         app:layout_constraintStart_toStartOf="@id/recommendation_color_point_view"
         app:layout_constraintEnd_toEndOf="@id/price_arrow_icon"
         app:layout_constraintTop_toBottomOf="@id/time_range_textview"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
 
