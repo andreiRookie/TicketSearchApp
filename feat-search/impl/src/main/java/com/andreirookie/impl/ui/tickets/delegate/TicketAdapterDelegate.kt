@@ -3,10 +3,16 @@ package com.andreirookie.impl.ui.tickets.delegate
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.TextView
+import androidx.annotation.OptIn
 import androidx.recyclerview.widget.RecyclerView
 import com.andreirookie.impl.R
 import com.andreirookie.impl.ui.tickets.TicketStubModel
+import com.google.android.material.badge.BadgeDrawable
+import com.google.android.material.badge.BadgeUtils
+import com.google.android.material.badge.ExperimentalBadgeUtils
+import com.google.android.material.card.MaterialCardView
 
 class TicketAdapterDelegate : AdapterDelegate {
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
@@ -31,6 +37,7 @@ class TicketAdapterDelegate : AdapterDelegate {
         private val view: View
     ) : RecyclerView.ViewHolder(view) {
 
+        @OptIn(ExperimentalBadgeUtils::class)
         fun bind(model: TicketStubModel) {
 
             val price = view.findViewById<TextView>(R.id.ticket_price)
@@ -55,6 +62,29 @@ class TicketAdapterDelegate : AdapterDelegate {
                 hasTransfer.visibility = View.VISIBLE
             }
 
+            val ticketCard = view.findViewById<MaterialCardView>(R.id.ticket_card)
+            ticketCard.setClipToOutline(false)
+
+            model.badge?.let {
+                val badgeView = initBadge()
+                badgeView.text = it
+                badgeView.updateBadgeCoordinates(ticketCard, itemView as FrameLayout)
+//                ticketCard.overlay.add(badgeView)
+                BadgeUtils.attachBadgeDrawable(badgeView, ticketCard, itemView as FrameLayout);
+            }
+
+        }
+
+        private fun initBadge(): BadgeDrawable {
+            val badgeView = BadgeDrawable.create(itemView.context)
+            with(badgeView) {
+                badgeTextColor = itemView.context.getColor(com.andreirookie.uikit.R.color.white)
+                badgeGravity = BadgeDrawable.TOP_END
+                backgroundColor = itemView.context.getColor(com.andreirookie.uikit.R.color.blue)
+                horizontalOffsetWithText = -8
+                verticalOffset = 64
+            }
+            return badgeView
         }
     }
 }
