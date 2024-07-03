@@ -35,7 +35,8 @@ class SearchFragment : Fragment() {
     lateinit var vmFactory: SearchScreenViewModel.Factory
     private val viewModel: SearchScreenViewModel by viewModels { vmFactory }
 
-    private lateinit var offersAdapter: OffersAdapter
+    @Inject
+    lateinit var offersAdapter: OffersAdapter
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -56,7 +57,6 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        offersAdapter = OffersAdapter(Stubs.offers)
         val recyclerView = view.findViewById<RecyclerView>(R.id.offers_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         recyclerView.setHasFixedSize(true)
@@ -105,14 +105,10 @@ class SearchFragment : Fragment() {
             }
             is OffersState.Data -> {
                 progressBar.visibility = View.GONE
-                println(state.offers)
+                offersAdapter.setList(state.offers)
             }
             is OffersState.Error -> {
                 progressBar.visibility = View.GONE
-            }
-            OffersState.Init -> {
-                progressBar.visibility = View.GONE
-
             }
         }
     }

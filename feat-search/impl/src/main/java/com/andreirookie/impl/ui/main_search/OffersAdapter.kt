@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.andreirookie.base_decimal_formatter.DecimalFormatProvider
 import com.andreirookie.impl.R
 import com.andreirookie.impl.network.OfferItemApiModel
+import com.andreirookie.impl.reposirory.OfferItemModel
+import javax.inject.Inject
 
-class OffersAdapter(
-    private val offers: List<OfferItemApiModel>
-) : RecyclerView.Adapter<OffersAdapter.OfferViewHolder>() {
+class OffersAdapter @Inject constructor() : RecyclerView.Adapter<OffersAdapter.OfferViewHolder>() {
 
-    private val decimalFormatter = DecimalFormatProvider.provideDecimalFormat()
+    private val offers: MutableList<OfferItemModel> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfferViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -29,6 +29,12 @@ class OffersAdapter(
         return offers.size
     }
 
+    fun setList(list: List<OfferItemModel>) {
+        offers.clear()
+        offers.addAll(list)
+        notifyDataSetChanged()
+    }
+
     inner class OfferViewHolder(
         view: View
     ) : RecyclerView.ViewHolder(view) {
@@ -38,12 +44,11 @@ class OffersAdapter(
         private val price = view.findViewById<TextView>(R.id.offer_price_textview)
         private val town = view.findViewById<TextView>(R.id.offer_town_textview)
 
-        fun bind(model: OfferItemApiModel) {
+        fun bind(model: OfferItemModel) {
 
             title.text = model.title
             town.text = model.town
-            val formattedPrice = decimalFormatter.format(model.price.value)
-            price.text = "от $formattedPrice ₽"
+            price.text = "от ${model.price} ₽"
 
             val imageRes = when (model.id) {
                 1 -> { R.drawable.img_offer_1 }

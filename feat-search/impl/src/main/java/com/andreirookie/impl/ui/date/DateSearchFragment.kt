@@ -61,6 +61,22 @@ class DateSearchFragment : Fragment(R.layout.date_search_screen_layout) {
             findNavController()
                 .navigate(com.andreirookie.navigation.R.id.action_navigate_from_date_search_screen_to_tickets_screen, bundle)
         }
+
+        // TODO divider
+//        val dividerDrawable = AppCompatResources.getDrawable(requireContext(), com.andreirookie.uikit.R.drawable.divider)
+//        recyclerView.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.HORIZONTAL).apply {
+//            dividerDrawable?.let { setDrawable(it) }
+//        })
+
+//        val chipGroup = view.findViewById<ChipGroup>(R.id.chip_group)
+//        ChipStubModel.chips.forEach { model ->
+//            val chip = LayoutInflater.from(requireActivity())
+//                .inflate(com.andreirookie.uikit.R.layout.chip_item_layout, null) as Chip
+//            chip.id
+//            chip.text = model.text
+//            model.iconRes?.let { chip.setChipIconResource(it) }
+//            chipGroup.addView(chip)
+//        }
     }
 
     override fun onStart() {
