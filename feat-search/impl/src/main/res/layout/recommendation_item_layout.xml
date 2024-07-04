@@ -33,13 +33,12 @@
         android:id="@+id/time_range_textview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:ellipsize="end"
         android:textSize="14sp"
         android:maxLines="1"
         app:layout_constraintStart_toStartOf="@id/airline_title"
         app:layout_constraintTop_toBottomOf="@id/airline_title"
-        app:layout_constraintBottom_toTopOf="@id/delimiter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/recommendation_price"
         />
 
@@ -59,19 +58,8 @@
         android:textSize="14sp"
         android:src="@drawable/ic_arrow_right_blue_16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/recommendation_color_point_view"
+        app:layout_constraintTop_toTopOf="@id/recommendation_price"
+        app:layout_constraintBottom_toBottomOf="@id/recommendation_price"
         />
-
-    <View
-        android:id="@+id/delimiter"
-        android:layout_width="0dp"
-        android:layout_height="4dp"
-        android:background="@drawable/horizontal_line_shape"
-        app:layout_constraintStart_toStartOf="@id/recommendation_color_point_view"
-        app:layout_constraintEnd_toEndOf="@id/price_arrow_icon"
-        app:layout_constraintTop_toBottomOf="@id/time_range_textview"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

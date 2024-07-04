@@ -6,9 +6,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.andreirookie.impl.R
@@ -62,11 +65,10 @@ class DateSearchFragment : Fragment(R.layout.date_search_screen_layout) {
                 .navigate(com.andreirookie.navigation.R.id.action_navigate_from_date_search_screen_to_tickets_screen, bundle)
         }
 
-        // TODO divider
-//        val dividerDrawable = AppCompatResources.getDrawable(requireContext(), com.andreirookie.uikit.R.drawable.divider)
-//        recyclerView.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.HORIZONTAL).apply {
-//            dividerDrawable?.let { setDrawable(it) }
-//        })
+        val dividerDrawable = AppCompatResources.getDrawable(requireContext(), com.andreirookie.uikit.R.drawable.divider)
+        recyclerView.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL).apply {
+            dividerDrawable?.let { setDrawable(it) }
+        })
 
 //        val chipGroup = view.findViewById<ChipGroup>(R.id.chip_group)
 //        ChipStubModel.chips.forEach { model ->

@@ -35,17 +35,7 @@ class SearchScreenViewModel @Inject constructor(
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
-                _offersFlow.value = OffersState.Error(e)
-            }
-
-            _offersFlow.value = OffersState.Loading
-
-            try {
                 _offersFlow.value = OffersState.Data(stubRepository.getOffers())
-            } catch (e: CancellationException) {
-                throw e
-            } catch (e: Exception) {
-                _offersFlow.value = OffersState.Error(e)
             }
         }
     }
