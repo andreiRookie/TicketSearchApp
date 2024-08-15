@@ -4,7 +4,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.MainCoroutineDispatcher
 
 interface DispatchersGetter {
-    fun main(): MainCoroutineDispatcher
-    fun io(): CoroutineDispatcher
-    fun default(): CoroutineDispatcher
+    val main: MainCoroutineDispatcher
+    val io: CoroutineDispatcher
+    val default: CoroutineDispatcher
 }

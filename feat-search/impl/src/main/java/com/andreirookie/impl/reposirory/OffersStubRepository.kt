@@ -16,7 +16,7 @@ class OffersStubRepositoryImpl @Inject constructor(
 ) : OffersStubRepository {
 
     override suspend fun getOffers(): List<OfferItemModel> {
-        return withContext(dispatcher.io()) {
+        return withContext(dispatcher.io) {
             stubApiController.getOffers().offers
                 .map { apiModel ->
                     mapper.map(apiModel)

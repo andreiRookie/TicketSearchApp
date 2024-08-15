@@ -7,15 +7,9 @@ import kotlinx.coroutines.MainCoroutineDispatcher
 
 class DispatchersGetterImpl : DispatchersGetter {
 
-    override fun main(): MainCoroutineDispatcher {
-        return Dispatchers.Main
-    }
+    override val main: MainCoroutineDispatcher = Dispatchers.Main
 
-    override fun io(): CoroutineDispatcher {
-        return Dispatchers.IO
-    }
+    override val io: CoroutineDispatcher = Dispatchers.IO
 
-    override fun default(): CoroutineDispatcher {
-        return Dispatchers.Default
-    }
+    override val default: CoroutineDispatcher = Dispatchers.Default
 }
