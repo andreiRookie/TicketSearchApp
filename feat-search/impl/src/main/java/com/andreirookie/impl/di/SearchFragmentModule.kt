@@ -16,48 +16,50 @@ import com.andreirookie.impl.usecase.GetOffersUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
-import dagger.Reusable
 import retrofit2.Retrofit
 import java.text.DecimalFormat
 import javax.inject.Qualifier
-import javax.inject.Singleton
 
 @Module
 interface SearchFragmentModule {
 
     companion object {
-        @Singleton
+        @FeatureSearchScope
         @Provides
         fun provideOffersApiController(retrofit: Retrofit): OffersApiController {
             return retrofit.create(OffersApiController::class.java)
         }
 
-        @Reusable
+        @FeatureSearchScope
         @Provides
         fun provideDecimalFormat(): DecimalFormat {
             return DecimalFormatProvider.provideDecimalFormat()
         }
     }
 
-    @Singleton
+    @FeatureSearchScope
     @Binds
     fun bindOfferStubApiController(impl: OfferStubApiControllerImpl): OfferStubApiController
 
-    @Reusable
+    @FeatureSearchScope
     @Binds
     fun bindOfferMapper(impl: OfferMapperImpl): OfferMapper
 
+    @FeatureSearchScope
     @Stub
     @Binds
     fun bindOffersStubRepository(impl: OffersStubRepositoryImpl): OffersRepository
 
+    @FeatureSearchScope
     @Api
     @Binds
     fun bindOffersRepository(impl: OffersRepositoryImpl): OffersRepository
 
+    @FeatureSearchScope
     @Binds
     fun bindGetOffersUseCase(impl: GetOffersUseCaseImpl): GetOffersUseCase
 
+    @FeatureSearchScope
     @Binds
     fun bindSearchScreenViewModel(impl: SearchScreenViewModel.Factory): ViewModelProvider.Factory
 }
