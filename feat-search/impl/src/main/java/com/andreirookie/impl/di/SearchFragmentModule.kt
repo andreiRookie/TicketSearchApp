@@ -9,15 +9,17 @@ import com.andreirookie.impl.reposirory.OfferMapper
 import com.andreirookie.impl.reposirory.OfferMapperImpl
 import com.andreirookie.impl.reposirory.OffersRepository
 import com.andreirookie.impl.reposirory.OffersRepositoryImpl
-import com.andreirookie.impl.reposirory.OffersStubRepository
 import com.andreirookie.impl.reposirory.OffersStubRepositoryImpl
 import com.andreirookie.impl.ui.main_search.SearchScreenViewModel
+import com.andreirookie.impl.usecase.GetOffersUseCase
+import com.andreirookie.impl.usecase.GetOffersUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
 import retrofit2.Retrofit
 import java.text.DecimalFormat
+import javax.inject.Qualifier
 import javax.inject.Singleton
 
 @Module
@@ -45,14 +47,23 @@ interface SearchFragmentModule {
     @Binds
     fun bindOfferMapper(impl: OfferMapperImpl): OfferMapper
 
-    @Singleton
+    @Stub
     @Binds
-    fun bindOffersStubRepository(impl: OffersStubRepositoryImpl): OffersStubRepository
+    fun bindOffersStubRepository(impl: OffersStubRepositoryImpl): OffersRepository
 
-    @Singleton
+    @Api
     @Binds
     fun bindOffersRepository(impl: OffersRepositoryImpl): OffersRepository
 
     @Binds
+    fun bindGetOffersUseCase(impl: GetOffersUseCaseImpl): GetOffersUseCase
+
+    @Binds
     fun bindSearchScreenViewModel(impl: SearchScreenViewModel.Factory): ViewModelProvider.Factory
 }
+
+@Qualifier
+annotation class Stub
+
+@Qualifier
+annotation class Api
