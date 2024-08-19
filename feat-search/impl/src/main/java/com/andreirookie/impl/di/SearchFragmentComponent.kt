@@ -5,7 +5,7 @@ import com.andreirookie.impl.ui.main_search.SearchFragment
 import dagger.Component
 import javax.inject.Singleton
 
-@Singleton
+@FeatureSearchScope
 @Component(
     dependencies = [ProvidersFacade::class],
     modules = [SearchFragmentModule::class]

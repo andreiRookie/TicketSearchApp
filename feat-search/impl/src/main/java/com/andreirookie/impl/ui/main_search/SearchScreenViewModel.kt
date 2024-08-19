@@ -32,6 +32,7 @@ class SearchScreenViewModel @Inject constructor(
         private val getOffersUseCase: GetOffersUseCase
     ) : ViewModelProvider.Factory {
 
+        @Suppress("UNCHECKED_CAST")
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             return when (modelClass) {
                 SearchScreenViewModel::class.java -> {
