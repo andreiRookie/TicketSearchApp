@@ -35,6 +35,7 @@ interface SearchFragmentModule {
         fun provideDecimalFormat(): DecimalFormat {
             return DecimalFormatProvider.provideDecimalFormat()
         }
+
     }
 
     @FeatureSearchScope

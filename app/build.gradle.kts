@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.andreirookie.ticketsearch"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.andreirookie.ticketsearch"
@@ -45,6 +45,8 @@ dependencies {
     implementation(project(":feat-shorter-way"))
     implementation(project(":feat-subscriptions"))
     implementation(project(":feat-profile"))
+    implementation(project(":offers:api"))
+    implementation(project(":offers:impl"))
 
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)

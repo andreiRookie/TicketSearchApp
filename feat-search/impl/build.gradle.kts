@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.andreirookie.impl"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         minSdk = 29
@@ -32,6 +32,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -48,6 +51,7 @@ dependencies {
     implementation(project(":base-cyrillic-validation"))
     implementation(project(":base-decimal-formatter"))
     implementation(project(":navigation"))
+    implementation(project(":offers:api"))
 
     implementation(libs.kotlinxSerializationJson)
 

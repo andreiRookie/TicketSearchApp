@@ -1,6 +1,6 @@
 package com.andreirookie.impl.usecase
 
-import com.andreirookie.impl.DispatchersGetter
+import com.andreirookie.api.di.DispatchersGetter
 import com.andreirookie.impl.di.Api
 import com.andreirookie.impl.di.Stub
 import com.andreirookie.impl.reposirory.OfferItemModel

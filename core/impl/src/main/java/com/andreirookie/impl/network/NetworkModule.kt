@@ -24,7 +24,7 @@ object NetworkModule {
     fun provideRetrofit(okhttpClient: OkHttpClient): Retrofit {
         val contentType = "application/json".toMediaType()
         return Retrofit.Builder()
-            .baseUrl("https://run.mocky.io/")
+            .baseUrl("https://drive.usercontent.google.com")
             .client(okhttpClient)
             .addConverterFactory(Json.asConverterFactory(contentType))
             .build()

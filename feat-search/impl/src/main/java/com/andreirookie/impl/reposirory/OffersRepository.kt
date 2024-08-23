@@ -1,6 +1,6 @@
 package com.andreirookie.impl.reposirory
 
-import com.andreirookie.impl.DispatchersGetter
+import com.andreirookie.api.di.DispatchersGetter
 import com.andreirookie.impl.network.OfferStubApiController
 import com.andreirookie.impl.network.OffersApiController
 import kotlinx.coroutines.withContext

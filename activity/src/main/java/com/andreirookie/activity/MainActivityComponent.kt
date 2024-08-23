@@ -1,6 +1,6 @@
 package com.andreirookie.activity
 
-import com.andreirookie.impl.ProvidersFacade
+import com.andreirookie.api.di.ProvidersFacade
 import dagger.Component
 import javax.inject.Singleton
 

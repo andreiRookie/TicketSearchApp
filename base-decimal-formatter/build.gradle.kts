@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.andreirookie.base_decimal_formatter"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         minSdk = 29

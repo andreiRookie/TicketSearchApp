@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.andreirookie.impl"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         minSdk = 29

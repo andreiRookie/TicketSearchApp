@@ -1,9 +1,9 @@
 package com.andreirookie.bridge
 
-import com.andreirookie.impl.AppContextProvider
-import com.andreirookie.impl.DispatchersProvider
-import com.andreirookie.impl.NetworkProvider
-import com.andreirookie.impl.network.DaggerDispatchersProviderComponent
+import com.andreirookie.api.di.AppContextProvider
+import com.andreirookie.api.di.DispatchersProvider
+import com.andreirookie.api.di.NetworkProvider
+import com.andreirookie.impl.dispatchers.DaggerDispatchersProviderComponent
 import com.andreirookie.impl.network.DaggerNetworkComponent
 
 object CoreProvidersFactory {
